@@ -4,19 +4,19 @@
     <div class="form-group">
       <label for="inputUserName" class="col-lg-2 control-label">Username</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" id="inputFirstName" placeholder="Username">
+        <input type="text" class="form-control" name="inputUserName" placeholder="UserName"  required [(ngModel)]="new_userName">
       </div>
     </div>
     <div class="form-group">
       <label for="inputEmail" class="col-lg-2 control-label">Email</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+        <input type="text" class="form-control" name="inputEmail" placeholder="Email" required [(ngModel)]="new_email">
       </div>
     </div>
     <div class="form-group">
       <div class="col-lg-10 col-lg-offset-2">
-        <button type="reset" class="btn btn-default">Cancel</button>
-        <button type="submit" class="btn btn-primary">Sign Up</button>
+        <button type="reset" class="btn btn-default" (click)="f.reset()">Cancel</button>
+        <button type="submit" class="btn btn-primary" (click)="registerUser(new_userName, new_email);">Sign Up</button>
       </div>
     </div>
   </fieldset>

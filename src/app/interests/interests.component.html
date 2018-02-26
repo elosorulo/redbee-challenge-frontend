@@ -4,28 +4,28 @@
     <div class="form-group">
       <label for="inputUsername" class="col-lg-2 control-label">Username</label>
       <div class="col-lg-8">
-        <input type="text" class="form-control" id="inputUsername" placeholder="Username">
+        <input type="text" class="form-control" name="inputUserName" placeholder="UserName" required [(ngModel)]="form_userName">
       </div>
       <div class="col-lg-2">
-      	<button type="submit" class="btn btn-primary">Search Interests</button>
+      	<button type="submit" class="btn btn-primary" (click)="getInterests(form_userName);">Search Interests</button>
       </div>
     </div>
 	<div class="form-group">
       <label for="profiles" class="col-lg-2 control-label">Profiles</label>
       <div class="col-lg-10">
-        <textarea class="form-control" rows="3" id="profiles"></textarea>
+        <textarea class="form-control" rows="3" name="profiles" required [(ngModel)]="form_profiles"></textarea>
       </div>
     </div>
     <div class="form-group">
       <label for="hashTags" class="col-lg-2 control-label">Hash Tags</label>
       <div class="col-lg-10">
-        <textarea class="form-control" rows="3" id="hashTags"></textarea>
+        <textarea class="form-control" rows="3" name="hashTags" required [(ngModel)]="form_hashTags"></textarea>
       </div>
     </div>
     <div class="form-group">
       <div class="col-lg-10 col-lg-offset-2">
-        <button type="reset" class="btn btn-default">Cancel</button>
-        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="reset" class="btn btn-default" (click)="f.reset()">Cancel</button>
+        <button type="submit" class="btn btn-primary" (click)="updateInterests(form_userName, form_profiles, form_hashTags);">Update</button>
       </div>
     </div>
   </fieldset>
